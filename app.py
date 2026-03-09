@@ -1,10 +1,15 @@
 import streamlit as st
 from groq import Groq
 
-# 1. AYARLAR
-# Buraya Groq API anahtarınızı girin
-GROQ_API_KEY = "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" 
+# ÖNEMLİ: Kodun içine anahtarı yazmıyoruz, Streamlit'in kasasından çağırıyoruz
+try:
+    GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+except KeyError:
+    st.error("Hata: GROQ_API_KEY bulunamadı. Lütfen Streamlit Cloud ayarlarından 'Secrets' kısmına ekleyin.")
+    st.stop()
+
 client = Groq(api_key=GROQ_API_KEY)
+# ... (Geri kalan kod aynı kalacak)
 
 # 2. SYSTEM PROMPT TANIMI (Hata almamak için en üstte veya butonun hemen içinde olmalı)
 SYSTEM_PROMPT = """Sen dünyanın en iyi PROMPT MÜHENDİSİSİN. 
@@ -56,4 +61,5 @@ if st.button("Profesyonel Komuta Dönüştür 🚀"):
             except Exception as e:
                 st.error(f"Bir hata oluştu: {e}")
     else:
+
         st.warning("Lütfen bir giriş yapın.")
