@@ -66,8 +66,9 @@ if st.button("Profesyonel Komuta Dönüştür 🚀"):
 
                 st.info("💡 Mobilde kopyalama ikonu çalışmazsa, metnin üzerine basılı tutarak 'Tümünü Seç' ve 'Kopyala' diyebilirsiniz.")
                 
-                except Exception as e:
-                    st.error(f"Bir hata oluştu: {e}")
-                else:
+                    except Exception as e:
+                        st.error(f"Bir hata oluştu: {e}")
+                    else:
 
-                    st.warning("Lütfen bir giriş yapın.")
+                        st.warning("Lütfen bir giriş yapın.")
+    
