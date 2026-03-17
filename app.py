@@ -50,13 +50,21 @@ if st.button("Profesyonel Komuta Dönüştür 🚀"):
                 
                 final_prompt = completion.choices[0].message.content.strip()
                 
-               st.markdown("---")
-                st.success("### ✅ Kopyalamaya Hazır Komut")
-                
-                # Tek parça metin olarak gösterim ve kopyalama alanı
-                st.code(final_prompt, language="text")
-                
-                st.info("Bu metni doğrudan başka bir yapay zekaya yapıştırabilirsiniz.")
+             st.markdown("---")
+st.success("### ✅ Kopyalamaya Hazır Komut")
+
+# 1. Standart görünüm (Bilgisayarlar için ideal)
+st.code(final_prompt, language="text")
+
+# 2. Mobil kullanıcılar için garantili kopyalama alanı
+# Bu alan, mobil cihazlarda 'basılı tut ve kopyala' özelliğini en rahat çalıştıran bileşendir.
+st.text_area(
+    "Mobil kullanıcılar için kopyalama alanı (Basılı tutarak seçebilirsiniz):", 
+    value=final_prompt, 
+    height=200
+)
+
+st.info("💡 Mobilde kopyalama ikonu çalışmazsa, metnin üzerine basılı tutarak 'Tümünü Seç' ve 'Kopyala' diyebilirsiniz.")
                 
             except Exception as e:
                 st.error(f"Bir hata oluştu: {e}")
