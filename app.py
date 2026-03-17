@@ -51,10 +51,10 @@ if st.button("Profesyonel Komuta Dönüştür 🚀"):
                 final_prompt = completion.choices[0].message.content.strip()
                 
                st.markdown("---")
-st.subheader("📋 Hazır Komut")
-
-# 1. Yöntem: Standart kod bloğu (Sağ üstteki butona dokunabilirler)
-st.code(final_prompt, language="text")
+                st.success("### ✅ Kopyalamaya Hazır Komut")
+                
+                # Tek parça metin olarak gösterim ve kopyalama alanı
+                st.code(final_prompt, language="text")
                 
                 st.info("Bu metni doğrudan başka bir yapay zekaya yapıştırabilirsiniz.")
                 
