@@ -55,9 +55,6 @@ if st.button("Profesyonel Komuta Dönüştür 🚀"):
                 
                 # Tek parça metin olarak gösterim ve kopyalama alanı
                 st.code(final_prompt, language="text")
-
-                # Mobil için yedek kopyalama alanı
-                st.text_area("Mobil için Seç-Kopyala Alanı:", value=final_prompt, height=200)
                 
                 st.info("Bu metni doğrudan başka bir yapay zekaya yapıştırabilirsiniz.")
                 
